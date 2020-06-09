@@ -1,0 +1,19 @@
+def intro():
+    name = input("What is your name? ")
+    print("Hello",name)
+#intro()
+
+
+
+import random
+def guessNumber():
+  #number = 21
+  number = random.randrange(1,10)
+  guess = int(input("Guess a number NOW!!!!!!!!!!. "))
+  #while the user does not guess your number, you will say "wrong #guess, try again"
+  while guess != number:
+      print ("Wrong guess, try again!!!!!!!!!!! :(")
+      guess = int(input("Guess another number. "))
+  print ("Horray, you guessed the number!")
+
+guessNumber()
