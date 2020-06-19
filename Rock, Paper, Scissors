@@ -1,0 +1,74 @@
+#import random
+import random
+#ROCK, PAPER, SCISSORS GAME:
+def RockPaperScissors():
+    #Print introduction, best of 5!
+    print("Hello, let's play Rock, Paper, Scissors!")
+    print("Best of 12 rounds wins!")
+    #rounds = 1
+    rounds = 1
+    points = 0
+    userPoints = 0
+    #while rounds <= 5:
+    while rounds <= 12:
+       #options = ["rock", "paper", "scissors"]
+       options = ["rock", "paper", "scissors"]
+       #spot = random.randrange(0,3)
+       spot = random.randrange(0,3)
+       #choice = options[spot]
+       choice = options[spot]
+       #otherChoice = str(input("rock, paper, or scissors? "))
+       userChoice = str(input("rock, paper, or scissors? "))
+       #if choice == "rock":
+       if choice == "rock":
+           #if user chose rock: tie! no one gets a point
+           if userChoice == "rock":
+               print("Tie!")
+           #if user chose paper: user wins! user gets point
+           elif userChoice == "paper":
+               print("You win this round...")
+               userPoints += 1
+           #if user chose scissors: we win! we get point
+           elif userChoice == "scissors":
+               print("I won this round!!!")
+               points += 1
+       #elif we chose paper:
+       if choice == "paper":
+            #if user chose rock: we win! we get point
+            if userChoice == "rock":
+               print("I won this round!!!")
+               points += 1
+            #if user chose paper: tie! no one gets a point
+            elif userChoice == "paper":
+               print("Tie!")
+            #if user chose scissors: user wins! user gets point
+            elif userChoice == "scissors":
+               print("You win this round.....")
+               userPoints += 1
+       #elif we chose scissors:
+       elif choice == "scissors":
+            #if user chose rock: user wins! user gets a point
+            if userChoice == "rock":
+               print("You win this round...")
+               userPoints += 1
+            #if user chose paper: we win! we get a point
+            elif userChoice == "paper":
+               print("I won this round!!!")
+               points += 1
+            #if user chose scissors: tie! no one gets a point
+            elif userChoice == "scissors":
+               print("Tie!")
+       #rounds += 1
+       rounds +=1
+    #print points and say who won
+    if points == userPoints:
+        print("We tied! We both got", points, "points." )
+    elif points > userPoints:
+        print("I win the game! Better luck next time..")
+        print("I got", points, "points and you got", userPoints, "points." )
+    elif points < userPoints:
+        print("Dang it, you won? I think you cheated...")
+        print("I demand a rematch!!! NOW!!!")
+        print("I got", points, "points and you got", userPoints, "points." )
+
+RockPaperScissors()
